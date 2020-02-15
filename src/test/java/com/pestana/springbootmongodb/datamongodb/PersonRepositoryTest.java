@@ -1,11 +1,15 @@
 package com.pestana.springbootmongodb.datamongodb;
 
 import com.pestana.springbootmongodb.ApplicationTests;
+import com.pestana.springbootmongodb.controller.PersonControllerTest;
 import com.pestana.springbootmongodb.model.Person;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
 
 import org.springframework.beans.factory.annotation.Autowired;
+
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -14,6 +18,8 @@ import static org.junit.jupiter.api.Assertions.*;
 @TestInstance(Lifecycle.PER_CLASS) // need to marc or set the repository instance with static
 public class PersonRepositoryTest extends ApplicationTests {
 
+    private static final Logger logger = LogManager.getLogger(PersonRepositoryTest.class);
+
     @Autowired
     PersonRepository repository;
 
@@ -21,26 +27,26 @@ public class PersonRepositoryTest extends ApplicationTests {
     void addAllPeople() {
         repository.save(new Person("Rodrigo", "rpestana@mail.com"));
         repository.save(new Person("Pedro", "pedro@mail.com"));
-        System.out.println("All registers added.");
+        logger.info("All registers added.");
     }
 
     @AfterAll
     void removeAllPeople() {
         repository.deleteAll();
-        System.out.println("All registers removed.");
+        logger.info("All registers removed.");
     }
 
     @Test
     public void testFindByName() {
-        System.out.println("People found with findbyName('Rodrigo'):");
+        logger.info("People found with findbyName('Rodrigo'):");
         Person s = repository.findByName("Rodrigo");
         assertEquals("Rodrigo", s.getName());
-        System.out.println(s);
+        logger.info(s);
     }
 
     @Test
     public void testFindByEmail() {
-        System.out.println("People found with findByEmail('10'):");
+        logger.info("People found with findByEmail('rpestana@mail.com'):");
         List<Person> list = repository.findByEmail("rpestana@mail.com");
         assertEquals(1, list.size());
         list.forEach(System.out::println);
