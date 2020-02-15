@@ -3,8 +3,8 @@
 *.xml
 
 # ignore default files
-.gitignore
 .idea
 
 #ignore .class files
 *.class
+/.idea/
