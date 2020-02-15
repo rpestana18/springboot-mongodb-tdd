@@ -82,7 +82,6 @@
 		</dependency>
 
 		<!-- End of log configurations -->
-
 	</dependencies>
 
 	<build>
@@ -94,6 +93,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
+				<!--By default, this plugin generates XML reports in the directory target/surefire-reports -->
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>

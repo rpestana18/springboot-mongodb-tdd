@@ -17,6 +17,5 @@ With trivial cases in this scenario we will show the use of tools and patterns t
 - Springboot
 - MongoDB database NoSQL
 - Junit 5 for automated tests
-- MapStruct to create DTOs
 - Log4j2 for Logging
 - Disruptor for asynchronous logger
