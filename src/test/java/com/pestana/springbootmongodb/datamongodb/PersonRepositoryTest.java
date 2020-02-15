@@ -24,6 +24,12 @@ public class PersonRepositoryTest extends ApplicationTests {
         System.out.println("All registers added.");
     }
 
+    @AfterAll
+    void removeAllPeople() {
+        repository.deleteAll();
+        System.out.println("All registers removed.");
+    }
+
     @Test
     public void testFindByName() {
         System.out.println("People found with findbyName('Rodrigo'):");
@@ -39,11 +45,4 @@ public class PersonRepositoryTest extends ApplicationTests {
         assertEquals(1, list.size());
         list.forEach(System.out::println);
     }
-
-
-   /* @AfterAll
-    void removeAllPeople() {
-        repository.deleteAll();
-        System.out.println("All registers removed.");
-    }*/
 }

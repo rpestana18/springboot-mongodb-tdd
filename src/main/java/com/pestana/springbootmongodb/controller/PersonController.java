@@ -26,6 +26,5 @@ public class PersonController {
         //return "welcome"; //view
         logger.info("Hello from Log4j 2 - num : {}", () -> "findAll");
         return personRepository.findAll();
-
     }
 }
