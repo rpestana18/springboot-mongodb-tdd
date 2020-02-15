@@ -1,0 +1,10 @@
+# ignore all IDE files
+*.iml
+*.xml
+
+# ignore default files
+.gitignore
+.idea
+
+#ignore .class files
+*.class
