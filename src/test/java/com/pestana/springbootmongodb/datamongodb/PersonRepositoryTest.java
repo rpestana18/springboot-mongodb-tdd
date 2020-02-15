@@ -41,9 +41,9 @@ public class PersonRepositoryTest extends ApplicationTests {
     }
 
 
-    @AfterAll
+   /* @AfterAll
     void removeAllPeople() {
         repository.deleteAll();
         System.out.println("All registers removed.");
-    }
+    }*/
 }

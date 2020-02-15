@@ -2,9 +2,12 @@
 *.iml
 *.xml
 
+#ignore all IDE directories
+/.idea/
+
 # ignore default files
 .idea
 
 #ignore .class files
 *.class
-/.idea/
+
