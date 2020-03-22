@@ -41,4 +41,12 @@ public class PersonControllerTest extends ApplicationTests {
         assertEquals(2, list.size());
         list.forEach(System.out::println);
     }
+
+    @Test
+    public void createPersonTest() {
+        logger.info("createPersonTest from Log4j 2 ", () -> "createPersonTest");
+        repository.save(new Person("Rodrigo", "rpestana@mail.com"));
+        logger.info("Person saved.");
+
+    }
 }
