@@ -38,7 +38,7 @@ public class PersonControllerTest extends ApplicationTests {
     public void findAllPersonTest() {
         logger.info("findAllPersonTest from Log4j 2 ", () -> "findAllPersonTest");
         List<Person> list = repository.findAll();
-        assertEquals(2, list.size());
+        assertEquals(3, list.size());
         list.forEach(System.out::println);
     }
 
@@ -47,6 +47,5 @@ public class PersonControllerTest extends ApplicationTests {
         logger.info("createPersonTest from Log4j 2 ", () -> "createPersonTest");
         repository.save(new Person("Rodrigo", "rpestana@mail.com"));
         logger.info("Person saved.");
-
     }
 }
